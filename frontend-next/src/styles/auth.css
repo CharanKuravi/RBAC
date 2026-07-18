@@ -471,6 +471,13 @@
   transform: translateX(4px);
 }
 .split-feature-icon { font-size: 1.25rem; flex-shrink: 0; margin-top: 0.05rem; }
+.split-feature-dot {
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  margin-top: 0.35rem;
+  display: inline-block;
+}
 .split-feature-title { font-size: 0.875rem; font-weight: 700; color: #f1f5f9; margin-bottom: 0.15rem; }
 .split-feature-sub { font-size: 0.78rem; color: rgba(148,163,184,0.75); }
 

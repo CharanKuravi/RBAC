@@ -113,28 +113,28 @@ export default function LoginPage() {
 
           <div className="split-features">
             <div className="split-feature-item">
-              <span className="split-feature-icon">🎓</span>
+              <span className="split-feature-dot" style={{background:'rgba(129,140,248,0.30)'}} />
               <div>
                 <div className="split-feature-title">Assigned Examinations</div>
                 <div className="split-feature-sub">Timed, proctored, auto-graded tests</div>
               </div>
             </div>
             <div className="split-feature-item">
-              <span className="split-feature-icon">📊</span>
+              <span className="split-feature-dot" style={{background:'rgba(52,211,153,0.30)'}} />
               <div>
                 <div className="split-feature-title">Performance Analytics</div>
                 <div className="split-feature-sub">Live scores, ranks and certificates</div>
               </div>
             </div>
             <div className="split-feature-item">
-              <span className="split-feature-icon">🛡️</span>
+              <span className="split-feature-dot" style={{background:'rgba(251,191,36,0.30)'}} />
               <div>
                 <div className="split-feature-title">Verified College Access</div>
                 <div className="split-feature-sub">One account per institutional email</div>
               </div>
             </div>
             <div className="split-feature-item">
-              <span className="split-feature-icon">📋</span>
+              <span className="split-feature-dot" style={{background:'rgba(251,113,133,0.30)'}} />
               <div>
                 <div className="split-feature-title">Grievance & Feedback</div>
                 <div className="split-feature-sub">Raise issues, track resolutions</div>

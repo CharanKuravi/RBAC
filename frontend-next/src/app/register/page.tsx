@@ -171,21 +171,21 @@ export default function RegisterPage() {
 
           <div className="split-features">
             <div className="split-feature-item">
-              <span className="split-feature-icon">📚</span>
+              <span className="split-feature-dot" style={{background:'rgba(129,140,248,0.30)'}} />
               <div>
                 <div className="split-feature-title">Study Resources</div>
                 <div className="split-feature-sub">Access all assigned materials</div>
               </div>
             </div>
             <div className="split-feature-item">
-              <span className="split-feature-icon">✏️</span>
+              <span className="split-feature-dot" style={{background:'rgba(52,211,153,0.30)'}} />
               <div>
                 <div className="split-feature-title">Online Examinations</div>
                 <div className="split-feature-sub">Timed, secure, auto-graded</div>
               </div>
             </div>
             <div className="split-feature-item">
-              <span className="split-feature-icon">🏆</span>
+              <span className="split-feature-dot" style={{background:'rgba(251,191,36,0.30)'}} />
               <div>
                 <div className="split-feature-title">Certificates & Ranks</div>
                 <div className="split-feature-sub">Download after result publication</div>
