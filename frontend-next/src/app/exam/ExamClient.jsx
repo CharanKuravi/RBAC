@@ -10,7 +10,7 @@ import '@/styles/exam.css'
 const MAX_VIOLATIONS = 5  // auto-submit threshold
 
 export default function Exam() {
-  const navigate = useRouter()
+  const router = useRouter()
   const [examData, setExamData]   = useState(null)
   const [answers, setAnswers]     = useState({})
   const [status, setStatus]       = useState('loading') // loading | preflight | ready | submitted | error
@@ -381,7 +381,7 @@ export default function Exam() {
           <button
             className="btn-primary"
             style={{ marginTop: '0.5rem' }}
-            onClick={() => navigate(`/review/${result.id}`)}
+            onClick={() => router.push(`/review/${result.id}`)}
           >
             Review Answers
           </button>

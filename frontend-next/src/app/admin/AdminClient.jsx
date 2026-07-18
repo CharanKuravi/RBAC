@@ -64,7 +64,7 @@ function fmtDate(str) {
 }
 
 export default function Admin() {
-  const navigate = useRouter()
+  const router = useRouter()
   const [section, setSection] = useState('dashboard')
   const [modal, setModal] = useState(null)
   const { theme, toggle: toggleTheme } = useTheme()

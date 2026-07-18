@@ -7,7 +7,7 @@ import '@/styles/exam.css'
 import '@/styles/auth.css'
 
 export default function StudentDashboard() {
-  const navigate = useRouter()
+  const router = useRouter()
   const { theme, toggle } = useTheme()
   const [tab, setTab] = useState('tests')
   const [tests, setTests] = useState([])
@@ -127,7 +127,7 @@ export default function StudentDashboard() {
                         ? <span style={{ fontSize: '0.82rem', color: 'var(--success)', fontWeight: 600 }}>
                             Submitted — {t.score !== null ? `Score: ${t.score}` : 'Pending'}
                           </span>
-                        : <button className="btn-action" onClick={() => navigate(`/exam?testId=${t.id}`)}>Take Exam</button>
+                        : <button className="btn-action" onClick={() => router.push(`/exam?testId=${t.id}`)}>Take Exam</button>
                       }
                       <div style={{ marginTop: '0.5rem' }}>
                         <button className="btn-secondary" style={{ fontSize: '0.72rem', padding: '0.25rem 0.6rem' }}
@@ -185,7 +185,7 @@ export default function StudentDashboard() {
                         </td>
                         <td style={{ padding: '0.75rem 1rem', borderBottom: '1px solid var(--border)', fontSize: '0.82rem' }}>{fmtDate(r.submitted_at)}</td>
                         <td style={{ padding: '0.75rem 1rem', borderBottom: '1px solid var(--border)' }}>
-                          <button className="btn-secondary" onClick={() => navigate(`/review/${r.id}`)}>Review</button>
+                          <button className="btn-secondary" onClick={() => router.push(`/review/${r.id}`)}>Review</button>
                         </td>
                       </tr>
                     ))}
