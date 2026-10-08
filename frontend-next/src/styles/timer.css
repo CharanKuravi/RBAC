@@ -1,0 +1,50 @@
+.timer-box {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+  padding: 0.3rem 0.9rem;
+  background: rgba(99,102,241,0.12);
+  border: 1px solid rgba(129,140,248,0.30);
+  border-radius: var(--radius-sm);
+  backdrop-filter: blur(8px);
+  min-width: 80px;
+  text-align: center;
+  transition: all 0.3s;
+}
+.timer-label {
+  font-size: 0.52rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(129,140,248,0.75);
+}
+.timer-value {
+  font-size: 1rem;
+  font-weight: 800;
+  color: #a5b4fc;
+  font-family: 'SF Mono','Fira Code','Courier New',monospace;
+  letter-spacing: 0.06em;
+}
+
+/* Warning state */
+.timer-box.warning {
+  background: rgba(245,158,11,0.14);
+  border-color: rgba(251,191,36,0.40);
+  animation: timerPulse 2s ease-in-out infinite;
+}
+.timer-box.warning .timer-label { color: rgba(251,191,36,0.70); }
+.timer-box.warning .timer-value { color: #fbbf24; }
+
+/* Critical state */
+.timer-box.critical {
+  background: rgba(225,29,72,0.18);
+  border-color: rgba(251,113,133,0.50);
+  animation: timerPulse 0.8s ease-in-out infinite;
+}
+.timer-box.critical .timer-label { color: rgba(251,113,133,0.80); }
+.timer-box.critical .timer-value { color: #fb7185; text-shadow: 0 0 12px rgba(251,113,133,0.60); }
+
+@keyframes timerPulse {
+  0%, 100% { box-shadow: 0 0 0 0 transparent; }
+  50% { box-shadow: 0 0 0 3px rgba(251,191,36,0.25); }
+}
