@@ -15,7 +15,14 @@ export default function StudentDashboard() {
   const [grievances, setGrievances] = useState([])
   const [certificates, setCertificates] = useState([])
   const [loading, setLoading] = useState(true)
-  const rollNumber = typeof window !== 'undefined' ? localStorage.getItem('roll_number') : ''
+  const [rollNumber, setRollNumber] = useState('')
+
+  useEffect(() => {
+    // Load roll number from localStorage on client side
+    if (typeof window !== 'undefined') {
+      setRollNumber(localStorage.getItem('roll_number') || '')
+    }
+  }, [])
 
   useEffect(() => {
     const loadAll = async () => {
@@ -125,7 +132,7 @@ export default function StudentDashboard() {
           <span className="exam-title">Student Dashboard</span>
         </div>
         <div className="topbar-right" style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
-          <span style={{ fontSize: '0.82rem', color: 'rgba(255,255,255,0.6)', fontFamily: 'Courier New, monospace' }}>{rollNumber}</span>
+          {rollNumber && <span style={{ fontSize: '0.82rem', color: 'rgba(255,255,255,0.6)', fontFamily: 'Courier New, monospace' }}>{rollNumber}</span>}
           <button className="theme-toggle" onClick={toggle}>{theme === 'dark' ? 'Light' : 'Dark'}</button>
           <button className="theme-toggle" onClick={() => router.push('/profile')}>My Profile</button>
           <button className="theme-toggle" onClick={() => router.push('/hackathons')}>🏆 Hackathons</button>

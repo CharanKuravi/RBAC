@@ -70,9 +70,17 @@ export default function Admin() {
   const [section, setSection] = useState('dashboard')
   const [modal, setModal] = useState(null)
   const { theme, toggle: toggleTheme } = useTheme()
+  const [role, setRole] = useState(null)
+  const [permissions, setPermissions] = useState([])
 
-  const role = typeof window !== 'undefined' ? localStorage.getItem('role') : null
-  const permissions = typeof window !== 'undefined' ? JSON.parse(localStorage.getItem('permissions') || '[]') : []
+  useEffect(() => {
+    // Load role and permissions from localStorage on client side
+    if (typeof window !== 'undefined') {
+      setRole(localStorage.getItem('role'))
+      setPermissions(JSON.parse(localStorage.getItem('permissions') || '[]'))
+    }
+  }, [])
+
   const isFullAccess = ['admin', 'super_admin', 'it_coordinator'].includes(role)
   const canAccess = (perm) => isFullAccess || permissions.includes(perm)
 
